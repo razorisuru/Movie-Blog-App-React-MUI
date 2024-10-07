@@ -13,6 +13,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import CloseRoundedIcon from "@mui/icons-material/CloseRounded";
 import Sitemark from "./SitemarkIcon";
 import ToggleColorMode from "./ToggleColorMode"; // Import the ToggleColorMode component
+import { Link } from "react-router-dom";
 
 const StyledToolbar = styled(Toolbar)(({ theme }) => ({
   display: "flex",
@@ -53,17 +54,15 @@ export default function AppAppBar({ mode, toggleColorMode }) {
           >
             <Sitemark />
             <Box sx={{ display: { xs: "none", md: "flex" } }}>
-              <Button variant="text" color="info" size="small">
-                Test
+              <Button component={Link} to="/" sx={{ textDecoration: "none" }}>
+                Home
               </Button>
-              <Button variant="text" color="info" size="small">
-                Test
-              </Button>
-              <Button variant="text" color="info" size="small">
-                Test
-              </Button>
-              <Button variant="text" color="info" size="small">
-                Test
+              <Button
+                component={Link}
+                to="/add-movie"
+                sx={{ textDecoration: "none" }}
+              >
+                Add Movie
               </Button>
               <Button
                 variant="text"
